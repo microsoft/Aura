@@ -8,6 +8,10 @@ Create a conda environment from the requirement.yml file
 conda env create --file requirement.yml
 ```
 
+## Data
+
+Data to be uploaded
+
 ## Running the Aura Sampler
 ### 1. Modify the following fields in ```configs/main_config.yml```
 
