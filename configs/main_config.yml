@@ -1,0 +1,37 @@
+# Configuration file for sampling from a dataset diverse, challenging and out-of-distribution audio files
+
+# - data_dir: Path to csv files that indexed the data set to sample from
+# - n: number of samples to generate
+# - clean_speech_filter: specifications to filter clean speech out of the data. The filter needs to be in
+# source.clean_speech_filter
+# - scorer: specification of models to predict which files will be challenging to dns models
+# - dnsmos_models: specification of dnsmos_model
+# - ood_scorer: specification of model to determine out-of-distribution files compared to DNS training set
+
+experience_name: Aura
+
+data_csv: "" # Put your data path here
+n: 1000
+sampling_method: 'diversity' # 'rank': whether ranking by score or 'diversity': sampling higher score in each cluster at a time (needs clustering)
+column_name: 'file_url' # column name of the data set to sample from
+clean_speech_filter:
+  input_length: 9.99
+  name: ClassFilter  
+
+challenging_detector:
+  name: DMOSScorerFromNoiseReduce
+  no_stft: False
+
+ood_scorer:
+  input_length: 9.99
+  name: OODClusterScorer
+
+clustering:
+  input_length: 9.99
+  tags_file: 'tags/noisyspeech_full_tags.csv'
+  name: Cluster
+
+dnsmos_models:
+  input_length: 9.0
+  name: Cluster
+

@@ -1,0 +1,41 @@
+# configuration file to run sampler on azure ml
+entry_script: 'main.py'
+
+arguments:
+  --config:
+    args: 'configs/aml_config.yml'
+
+  --clean_speech_classifier:
+    args: 'audio-tag/models/pre_trained_models/classifiers/labeler.onnx'
+    category: 'data'
+
+  --sig_dnsmos_path:
+    args: 'audio-tag/models/pre_trained_models/dns835/sig.onnx'
+    category: 'data'
+
+  --bak_ovr_dnsmos_path:
+    args: 'audio-tag/models/pre_trained_models/dns835/bak_ovr.onnx'
+    category: 'data'
+
+  --dns_model_path:
+    args: 'audio-tag/models/pre_trained_models/dns_models/tfnet-v4-newmodelr4-2006000-stft.onnx'
+    category: 'data'
+
+  --noise_type_classifier_path:
+    args: 'audio-tag/models/pre_trained_models/noise_type_model/tagger_236.onnx'
+    category: 'data'
+
+  --ood_centroids:
+    args: 'audio-tag/models/pre_trained_models/centroids/centroids_dns_train.npz'
+    category: 'data'
+
+  --centroids:
+    args: 'audio-tag/models/pre_trained_models/centroids/centroids.npz'
+    category: 'data'
+
+  --save_dir:
+    args: 'audio-tag/run_outputs/sampler/mdp_smulated/test'
+    category: 'output'
+    overwrite: True
+
+
