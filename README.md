@@ -45,6 +45,24 @@ If you use our work, please cite using the following bibtex:
 ## Link to paper:
 [Aura: Privacy-preserving augmentation to improve test set diversity in noise suppression applications](https://arxiv.org/abs/2110.04391)
 
+
+## DNSMOS Model
+
+### Citation
+
+```
+@article{reddy2021dnsmos,
+  title={DNSMOS P. 835: A non-intrusive perceptual objective speech quality metric to evaluate noise suppressors},
+  author={Reddy, Chandan KA and Gopal, Vishak and Cutler, Ross},
+  journal={arXiv preprint arXiv:2110.01763},
+  year={2021}
+}
+```
+
+### Link
+
+https://github.com/microsoft/DNS-Challenge/tree/master/DNSMOS
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
