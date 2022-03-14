@@ -14,6 +14,12 @@ Create a conda environment from the requirement.yml file
 conda env create --file requirement.yml
 ```
 
+You also need git lfs for accessing the audio data which can be installed using the following commands:
+```
+git lfs install
+```
+For more details, please look at [Git Large File Storage.](https://git-lfs.github.com/)
+
 ## Data
 
 Data to be uploaded
@@ -21,7 +27,7 @@ Data to be uploaded
 ## Running the Aura Sampler
 ### 1. Modify the following fields in ```configs/main_config.yml```
 
-**data_csv**: Location of csv containing paths to data files
+**data_csv**: Location of csv containing paths to data files ```data/data.csv```
 
 **n**: Number of samples you want (default: 1000)
 
