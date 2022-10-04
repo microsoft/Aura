@@ -16,7 +16,7 @@ from ..utils.audiolib import load_audio_file, infer_mos
 
 class DMOSScorerFromNoiseReduce(object):
 
-    def __init__(self, onnx_dns_model, onnx_dnsmos_models, input_length, score_criteria={'MOS_sig': 1.0}, sampling_rate=16000, no_stft=True):
+    def __init__(self, onnx_dnsmos_models, input_length, score_criteria={'MOS_sig': 1.0}, sampling_rate=16000, no_stft=True):
 
         self.session_sig = WrapInferenceSession(onnx_dnsmos_models['sig_model_path'])
         self.session_bak_ovr = WrapInferenceSession(onnx_dnsmos_models['bak_ovr_model_path'])
