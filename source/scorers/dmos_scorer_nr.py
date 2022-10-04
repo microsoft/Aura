@@ -71,7 +71,7 @@ class DMOSScorerFromNoiseReduce(object):
         if audio is None:
             return -1, -1, -1, audio, fs
 
-        enhanced_sig = self.run(audio)
+        enhanced_sig = self.run(audio, fs)
 
         dns_mos_sig, dns_mos_bak, dns_mos_ovr = self.infer_mos(enhanced_sig, fs)
 
@@ -118,3 +118,6 @@ class DMOSScorerFromNoiseReduce(object):
         sig, bak, ovr = infer_mos(audio, fs, input_length, self.session_sig, self.session_bak_ovr)
 
         return sig, bak, ovr
+
+    def run(self, audio, fs):
+        return nr.reduce_noise(y=audio, sr=fs)
